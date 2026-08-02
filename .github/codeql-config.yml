@@ -1,0 +1,8 @@
+name: pdf-browser-preview
+
+# The vendored pdf.js viewer is a prebuilt third-party application, replaced
+# rather than edited here. Scanning it reports findings in Mozilla's code that
+# this repository cannot act on, and every upgrade would report them again.
+# Vulnerabilities in the viewer belong upstream; see SECURITY.md.
+paths-ignore:
+  - src/pdfjs-viewer

@@ -26,5 +26,6 @@ jobs:
         with:
           languages: javascript-typescript
           queries: security-extended
+          config-file: ./.github/codeql-config.yml
 
       - uses: github/codeql-action/analyze@18420e3271f74589575af831a523c833acda327f # v2.26.2

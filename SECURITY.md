@@ -32,3 +32,11 @@ this project does not maintain.
 
 Parsing and rendering are delegated to pdf.js. A flaw in how it reads a document
 belongs upstream, but report it here as well and I will forward it.
+
+## Code Scanning Coverage
+
+Code scanning analyses this repository's own code and skips `src/pdfjs-viewer/`,
+configured in `.github/codeql-config.yml`. That directory is a prebuilt copy of
+the pdf.js viewer, replaced rather than edited here, so findings inside it are
+Mozilla's to act on and would be reported again at every upgrade. Report those
+upstream, and here as well.
