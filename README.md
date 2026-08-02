@@ -58,8 +58,13 @@ run before a pull request. Participation follows the
 
 The renderer is [pdf.js](https://github.com/mozilla/pdf.js), vendored under
 `src/pdfjs-viewer/`, and the way it is wired into a webview follows
-[vscode-pdfviewer](https://github.com/tomoki1207/vscode-pdfviewer). Their
-licences are in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
+[vscode-pdfviewer](https://github.com/tomoki1207/vscode-pdfviewer). The
+substitutes for the standard PDF fonts are the Foxit set from PDFium and
+Liberation Sans.
+
+Those are binary and minified files, which carry no licence comment a bundler
+could collect, so every licence is reproduced in full in
+[THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
 
 ## License
 
