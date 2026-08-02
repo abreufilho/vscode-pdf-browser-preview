@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="Shud PDF Preview">
+  <rect x="8" y="8" width="240" height="240" rx="48" fill="#0f172a"/>
+  <path d="M68 38h82l42 42v138H68z" fill="#f8fafc" stroke="#fb7185" stroke-width="8" stroke-linejoin="round"/>
+  <path d="M150 38v44h42" fill="#fecdd3" stroke="#fb7185" stroke-width="8" stroke-linejoin="round"/>
+  <path d="M88 176c24-8 42-30 54-66 6 34 18 52 36 56-30-2-54 3-72 16" fill="none" stroke="#e11d48" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
