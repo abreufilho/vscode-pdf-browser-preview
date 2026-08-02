@@ -1,0 +1,106 @@
+{
+  "name": "pdf-browser-preview",
+  "displayName": "PDF Preview",
+  "description": "Local PDF custom editor powered by a fully bundled PDF.js viewer.",
+  "version": "1.0.0",
+  "publisher": "abreufilho",
+  "private": true,
+  "license": "MIT",
+  "author": {
+    "name": "Antonio Abreu Filho",
+    "url": "https://abreufilho.com.br"
+  },
+  "icon": "assets/icon.png",
+  "galleryBanner": {
+    "color": "#881337",
+    "theme": "dark"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/abreufilho/vscode-pdf-browser-preview"
+  },
+  "homepage": "https://github.com/abreufilho/vscode-pdf-browser-preview",
+  "bugs": {
+    "url": "https://github.com/abreufilho/vscode-pdf-browser-preview/issues"
+  },
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Visualization"
+  ],
+  "keywords": [
+    "pdf",
+    "preview",
+    "pdfjs",
+    "viewer",
+    "offline"
+  ],
+  "activationEvents": [
+    "onCustomEditor:pdf-browser-preview.editor",
+    "onCommand:pdfBrowserPreview.open"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "pdfBrowserPreview.open",
+        "title": "PDF: Open Browser Preview",
+        "icon": "$(open-preview)"
+      }
+    ],
+    "customEditors": [
+      {
+        "viewType": "pdf-browser-preview.editor",
+        "displayName": "PDF Browser Preview",
+        "selector": [
+          {
+            "filenamePattern": "*.pdf"
+          }
+        ],
+        "priority": "default"
+      }
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "command": "pdfBrowserPreview.open",
+          "when": "resourceExtname == .pdf",
+          "group": "navigation"
+        }
+      ],
+      "editor/title": [
+        {
+          "command": "pdfBrowserPreview.open",
+          "when": "resourceExtname == .pdf",
+          "group": "navigation"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint . --ignore-pattern src/pdfjs-viewer",
+    "format:check": "prettier --check \"src/**/*.ts\" \"test/**/*.ts\" \"scripts/*.mjs\" \"*.json\"",
+    "test": "npm run typecheck && esbuild test/*.test.ts --bundle --platform=node --format=cjs --outdir=out/test --log-level=warning && node --test out/test/*.test.js",
+    "vscode:prepublish": "npm run build",
+    "package": "vsce package"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/node": "^26.1.2",
+    "@types/vscode": "1.80",
+    "@vscode/vsce": "^3.9.2",
+    "esbuild": "^0.28.1",
+    "eslint": "^10.8.0",
+    "globals": "^17.8.0",
+    "prettier": "^3.9.6",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.65.0"
+  },
+  "overrides": {
+    "encoding-sniffer": "1.0.2"
+  }
+}
